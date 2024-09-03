@@ -42,7 +42,7 @@ contract Twitter{
         return tweets[_owner];
     }
 
-    function getSingleTweetById(address _owner, uint _id) public view returns(Tweet memory){
-        return tweets[_owner][_id];
+    function getSingleTweetById(uint _id) public view returns(Tweet memory){
+        return tweets[msg.sender][_id];
     }
 }
