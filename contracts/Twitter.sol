@@ -13,6 +13,8 @@ pragma solidity ^0.8.26;
 
 contract Twitter{
 
+    uint16 constant MAX_TWEET_LENGTH = 280;
+
     struct Tweet{
         address author;
         string content;
@@ -23,6 +25,8 @@ contract Twitter{
     mapping(address =>  Tweet[]) public tweets;
 
     function addTweet(string memory _tweet) public{
+
+        require(bytes(_tweet).length <= MAX_TWEET_LENGTH, "Your tweet is too long brah!");
         
         Tweet memory newTweet = Tweet({
             author: msg.sender,
