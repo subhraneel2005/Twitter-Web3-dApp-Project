@@ -10,10 +10,16 @@ pragma solidity ^0.8.26;
 // 1️⃣ Define a Tweet Struct with author, content, timestamp, likes
 // 2️⃣ Add the struct to array
 // 3️⃣ Test Tweets
+// 1️⃣ Add a function called changeTweetLength to change max tweet length
+// HINT: use newTweetLength as input for function
+// 2️⃣ Create a constructor function to set an owner of contract
+// 3️⃣ Create a modifier called onlyOwner
+// 4️⃣ Use onlyOwner on the changeTweetLength function
 
 contract Twitter{
 
-    uint16 constant MAX_TWEET_LENGTH = 280;
+    uint16 public  MAX_TWEET_LENGTH = 280;
+    address public owner;
 
     struct Tweet{
         address author;
@@ -22,7 +28,20 @@ contract Twitter{
         uint256 likes;
     }
 
+    constructor(){
+        owner = msg.sender;
+    }
+
     mapping(address =>  Tweet[]) public tweets;
+
+    modifier isOwner(){
+        require(msg.sender == owner, "YOU ARE NOT THE OWNER!!!!!!");
+        _;
+    }
+
+    function changeTweetLength(uint16 _newTweetLength) public isOwner{
+        MAX_TWEET_LENGTH = _newTweetLength;
+    }
 
     function addTweet(string memory _tweet) public{
 
