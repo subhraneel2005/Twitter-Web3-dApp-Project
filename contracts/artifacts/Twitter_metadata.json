@@ -62,6 +62,11 @@
 					{
 						"components": [
 							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
 								"internalType": "address",
 								"name": "author",
 								"type": "address"
@@ -103,6 +108,11 @@
 					{
 						"components": [
 							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
 								"internalType": "address",
 								"name": "author",
 								"type": "address"
@@ -129,6 +139,24 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_author",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "likeTweet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -160,6 +188,11 @@
 				"name": "tweets",
 				"outputs": [
 					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
 						"internalType": "address",
 						"name": "author",
 						"type": "address"
@@ -181,6 +214,24 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_author",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "unlikeTweet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -212,11 +263,11 @@
 	},
 	"sources": {
 		"contracts/Twitter.sol": {
-			"keccak256": "0x017d86e93b043f4f746f21885a807e54ed4203138131e40a170bb29a7bef1b5e",
+			"keccak256": "0x82b461db7770844fb2eb1e3f7677ef5c94487cf44c1b7831db4b396e6e1392e1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8f74dcc81d679b139c01b74f316fef51fa7401de33457074e3f5e2eaca510174",
-				"dweb:/ipfs/QmacuYRRBwiweYvQZSaecaKEXA1VyHKuwVqLPQXXVzQtKD"
+				"bzz-raw://9746623ad733a625ddd060cfa7ffc1a61abb9fda3d5430dfddb93f6aacc46fdd",
+				"dweb:/ipfs/QmbQmKXi9Zssp8y2TkTTZVoKgWpSK2jzPhNumTA9JcaQKZ"
 			]
 		}
 	},
